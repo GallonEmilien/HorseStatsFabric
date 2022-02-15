@@ -9,11 +9,11 @@
 
 A lightweight mod that shows the horses' stats (health, jump height, speed, and slots for Llamas). 
 
-![demo](https://github.com/lilgallon/HorseStatsMod/raw/MC_1.18.x/.github/resources/demo-1.1.0.png)
+![demo](https://github.com/GallonEmilien/HorseStatsMod/raw/MC_FABRIC_1.18.1/.github/demo-1.png)
 
-![demo](https://github.com/lilgallon/HorseStatsMod/raw/MC_1.18.x/.github/resources/demo-1.2.0.png)
+![demo](https://github.com/GallonEmilien/HorseStatsMod/raw/MC_FABRIC_1.18.1/.github/demo-2.png)
 
-![demo](https://github.com/lilgallon/HorseStatsMod/raw/MC_1.18.x/.github/resources/demo-1.3.0.png)
+![demo](https://github.com/GallonEmilien/HorseStatsMod/raw/MC_FABRIC_1.18.1/.github/demo-3.png)
 
 ## Contributing
 Don't hesitate to contribute. Even if it's your first time, it's never too late to learn!
