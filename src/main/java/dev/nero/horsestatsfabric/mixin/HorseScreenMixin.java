@@ -65,6 +65,13 @@ public abstract class HorseScreenMixin extends HandledScreen<HorseScreenHandler>
 
         this.drawTexture(matrices, this.backgroundWidth, 0, 0, 16,
                 (int)(159/1.6)+2, 16,(int)(256/1.6),128);
+        if(this.entity instanceof HorseEntity || this.entity instanceof SkeletonHorseEntity || this.entity instanceof DonkeyEntity)
+        {
+            this.drawTexture(matrices, this.backgroundWidth, 18, 0, 16,
+                    (int)(159/1.6)+2, 16,(int)(256/1.6),128);
+            this.drawTexture(matrices, this.backgroundWidth, 36, 0, 16,
+                    (int)(159/1.6)+2, 16,(int)(256/1.6),128);
+        }
 
         int y = 4;
 
@@ -77,12 +84,6 @@ public abstract class HorseScreenMixin extends HandledScreen<HorseScreenHandler>
 
         if(this.entity instanceof HorseEntity || this.entity instanceof SkeletonHorseEntity || this.entity instanceof DonkeyEntity)
         {
-
-            this.drawTexture(matrices, this.backgroundWidth, 18, 0, 16,
-                    (int)(159/1.6)+2, 16,(int)(256/1.6),128);
-            this.drawTexture(matrices, this.backgroundWidth, 36, 0, 16,
-                    (int)(159/1.6)+2, 16,(int)(256/1.6),128);
-
             this.textRenderer.draw(matrices, "♥" , x+1, 0+y,0xcc0000);
             this.textRenderer.draw(matrices, "⇪" , x+2, 18+y,0x6fa8dc);
             this.textRenderer.draw(matrices, "➟", x, 36+y,0x6fa8dc);
