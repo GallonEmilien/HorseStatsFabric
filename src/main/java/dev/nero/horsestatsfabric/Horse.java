@@ -83,13 +83,19 @@ public class Horse
         if(horse) {
             t = "Health: " + MIN_HEALTH + "/" + getHealth() + "/" + "" + MAX_HEALTH + " " +
                     "Jump: " + MIN_JUMP_HEIGHT + "/" + getJumpHeight() + "/" + "" + MAX_JUMP_HEIGHT + " " +
-                    "Speed: " + MIN_SPEED + "/" + getSpeed() + "/" + "" + MAX_SPEED;
+                    "Speed: " + MIN_SPEED + "/" + getSpeed() + "/" + "" + MAX_SPEED + " ";
         } else {
             t = "Health: "+getHealth()+
                 " / Jump: "+getJumpHeight()+
                 " / Speed: "+getSpeed()+
                 " / Slots: "+getSlots();
         }
+
+        if(getOwner() != null)
+        {
+            t = t + " / Owner :"+getOwner();
+        }
+
         return t;
     }
 

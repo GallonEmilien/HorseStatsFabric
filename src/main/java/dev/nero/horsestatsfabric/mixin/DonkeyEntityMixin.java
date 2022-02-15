@@ -42,7 +42,7 @@ public abstract class DonkeyEntityMixin extends HorseBaseEntity {
             double speed = this.getAttributes().getValue(EntityAttributes.GENERIC_MOVEMENT_SPEED);
 
             int slots = this.getInventorySize();
-            String owner = "";
+            String owner = null;
 
             if(this.getOwnerUuid() != null) {
                 GameProfile profile = new GameProfile(this.getOwnerUuid(), null);
