@@ -1,11 +1,5 @@
 package dev.nero.horsestatsfabric;
 
-import net.minecraft.text.*;
-
-import java.text.DecimalFormat;
-import java.util.List;
-import java.util.UUID;
-
 public class Horse
 {
     public static final double MIN_HEALTH = 15;
