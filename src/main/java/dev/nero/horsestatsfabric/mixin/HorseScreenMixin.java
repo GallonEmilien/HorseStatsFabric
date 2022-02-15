@@ -72,15 +72,14 @@ public abstract class HorseScreenMixin extends HandledScreen<HorseScreenHandler>
         this.drawTexture(matrices, this.backgroundWidth, 36, 0, 16,
                 (int)(159/1.6)+2, 16,(int)(256/1.6),128);
 
+        int y = 4;
+
         if(horse.getOwner() != null)
         {
             this.drawTexture(matrices, this.backgroundWidth, 54, 0, 16,
                     (int)(159/1.6)+2, 16,(int)(256/1.6),128);
-            int xMid;
-            xMid = (this.width/2)-(this.backgroundWidth/2)-(horse.getOwner().length()+(horse.getOwner().length()*4/2));
-            this.textRenderer.draw(matrices, "Belong to "+horse.getOwner(), xMid, 70, Colors.ZERO.getColor());
+            this.textRenderer.draw(matrices, "Owner: "+horse.getOwner(), x, 54+y, Colors.FULL.getColor());
         }
-        int y = 4;
 
         this.textRenderer.draw(matrices, "♥" , x+1, 0+y,0xcc0000);
         this.textRenderer.draw(matrices, "⇪" , x+2, 18+y,0x6fa8dc);

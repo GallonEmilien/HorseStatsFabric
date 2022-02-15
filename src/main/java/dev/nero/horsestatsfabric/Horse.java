@@ -29,10 +29,17 @@ public class Horse
     {
         this.horse = horse;
         this.health = health;
+        this.owner = owner;
         this.jumpHeight = jumpHeight;
         this.speed = speed;
         this.slots = slots;
         convert();
+    }
+
+    //To delete
+    public void setOwner(String owner)
+    {
+        this.owner = owner;
     }
 
     public void convert()
