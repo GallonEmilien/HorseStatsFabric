@@ -5,3 +5,4 @@
 - Language support
 - Javadoc & English comments
 - Check for only client support
+- Change of inconsistent colors 
