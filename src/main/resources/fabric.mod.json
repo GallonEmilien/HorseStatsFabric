@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "horsestatsfabric",
+  "version": "${version}",
+
+  "name": "Horse Stats Fabric",
+  "description": "Fabric version Horse Stat Mod",
+  "authors": [
+    "Boucki"
+  ],
+  "contact": {
+    "homepage": "https://github.com/gallonemilien",
+    "sources": "https://github.com/GallonEmilien/HorseStatsModFabric"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/horsestatsfabric/horsestatfabric.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.nero.horsestatsfabric.HorseStatsFabric"
+    ]
+  },
+  "mixins": [
+    "horsestatsfabric.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
