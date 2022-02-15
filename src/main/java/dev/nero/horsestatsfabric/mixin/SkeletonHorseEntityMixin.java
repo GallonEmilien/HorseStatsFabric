@@ -35,6 +35,8 @@ public abstract class SkeletonHorseEntityMixin extends HorseBaseEntity {
             double jumpStrength = this.getJumpStrength();
             double maxHealth = this.getMaxHealth();
             double speed = this.getAttributes().getValue(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+            HorseBaseEntity horseEntity = this;
+
 
             int slots = 0;
             String owner = null;
@@ -45,7 +47,7 @@ public abstract class SkeletonHorseEntityMixin extends HorseBaseEntity {
                 owner = profile.getName();
             }
 
-            Horse horse = new Horse(maxHealth,jumpStrength,speed,slots,owner,true);
+            Horse horse = new Horse(maxHealth,jumpStrength,speed,slots,owner,horseEntity);
 
             player.sendMessage(new LiteralText(horse.toString()),true);
         }

@@ -36,6 +36,9 @@ public abstract class DonkeyEntityMixin extends HorseBaseEntity {
         //player.shouldCancelInteraction() renvoie si le joueur s'accroupit ou non
         if (player.getWorld().isClient && player.shouldCancelInteraction() && !isTame())
         {
+
+            HorseBaseEntity horseEntity = this;
+
             double jumpStrength = this.getJumpStrength();
             double maxHealth = this.getMaxHealth();
             double speed = this.getAttributes().getValue(EntityAttributes.GENERIC_MOVEMENT_SPEED);
@@ -49,7 +52,7 @@ public abstract class DonkeyEntityMixin extends HorseBaseEntity {
                 owner = profile.getName();
             }
 
-            Horse horse = new Horse(maxHealth,jumpStrength,speed,slots,owner,false);
+            Horse horse = new Horse(maxHealth,jumpStrength,speed,slots,owner,horseEntity);
 
             player.sendMessage(new LiteralText(horse.toString()),true);
         }

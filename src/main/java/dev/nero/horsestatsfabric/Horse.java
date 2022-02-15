@@ -1,25 +1,20 @@
 package dev.nero.horsestatsfabric;
 
+import net.minecraft.entity.passive.DonkeyEntity;
+import net.minecraft.entity.passive.HorseBaseEntity;
+import net.minecraft.entity.passive.HorseEntity;
+
 public class Horse
 {
-    public static final double MIN_HEALTH = 15;
-    public static final double MAX_HEALTH = 30;
-    public static final double MIN_JUMP_HEIGHT = 1.25;
-    public static final double MAX_JUMP_HEIGHT = 5;
-    public static final double MIN_SPEED = 4.8;
-    public static final double MAX_SPEED = 14.5;
-    private final double MIN_SLOTS = 3;
-    private final double MAX_SLOTS = 15;
-
     private double health;
     private double jumpHeight;
     private double speed;
     private int slots;
     private String owner;
 
-    private boolean horse;
+    private HorseBaseEntity horse;
 
-    public Horse(double health, double jumpHeight, double speed, int slots, String owner, boolean horse)
+    public Horse(double health, double jumpHeight, double speed, int slots, String owner, HorseBaseEntity horse)
     {
         this.horse = horse;
         this.health = health;
@@ -74,15 +69,18 @@ public class Horse
     public String toString()
     {
         String t;
-        if(horse) {
-            t = "Health: " + MIN_HEALTH + "/" + getHealth() + "/" + "" + MAX_HEALTH + " " +
-                    "Jump: " + MIN_JUMP_HEIGHT + "/" + getJumpHeight() + "/" + "" + MAX_JUMP_HEIGHT + " " +
-                    "Speed: " + MIN_SPEED + "/" + getSpeed() + "/" + "" + MAX_SPEED + " ";
-        } else {
+        if(horse instanceof HorseEntity) {
+            t =
+                    "Health: " + HorseAttributes.HORSE.getMinHealth() + "/" + getHealth() + "/" + "" + HorseAttributes.HORSE.getMaxHealth() + " " +
+                    "Jump: " + HorseAttributes.HORSE.getMinJump() + "/" + getJumpHeight() + "/" + "" + HorseAttributes.HORSE.getMaxJump() + " " +
+                    "Speed: " + HorseAttributes.HORSE.getMinSpeed() + "/" + getSpeed() + "/" + "" + HorseAttributes.HORSE.getMaxSpeed() + " ";
+        } else if(horse instanceof DonkeyEntity) {
             t = "Health: "+getHealth()+
                 " / Jump: "+getJumpHeight()+
                 " / Speed: "+getSpeed()+
                 " / Slots: "+getSlots();
+        } else {
+            t = "Health: "+getHealth();
         }
 
         if(getOwner() != null)
