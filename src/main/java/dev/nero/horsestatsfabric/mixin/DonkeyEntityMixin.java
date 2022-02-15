@@ -44,9 +44,11 @@ public abstract class DonkeyEntityMixin extends HorseBaseEntity {
             int slots = this.getInventorySize();
             String owner = "";
 
-            GameProfile profile = new GameProfile(this.getOwnerUuid(),null);
-            profile = MinecraftClient.getInstance().getSessionService().fillProfileProperties(profile,false);
-            owner = profile.getName();
+            if(this.getOwnerUuid() != null) {
+                GameProfile profile = new GameProfile(this.getOwnerUuid(), null);
+                profile = MinecraftClient.getInstance().getSessionService().fillProfileProperties(profile, false);
+                owner = profile.getName();
+            }
 
             Horse horse = new Horse(maxHealth,jumpStrength,speed,slots,owner,false);
 

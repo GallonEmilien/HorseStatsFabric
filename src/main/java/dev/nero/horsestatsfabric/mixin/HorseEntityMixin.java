@@ -63,11 +63,13 @@ public abstract class HorseEntityMixin extends HorseBaseEntity {
             double speed = this.getAttributes().getValue(EntityAttributes.GENERIC_MOVEMENT_SPEED);
 
             int slots = 0;
-            String owner = "";
+            String owner = null;
 
-            GameProfile profile = new GameProfile(this.getOwnerUuid(),null);
-            profile = MinecraftClient.getInstance().getSessionService().fillProfileProperties(profile,false);
-            owner = profile.getName();
+            if(this.getOwnerUuid() != null) {
+                GameProfile profile = new GameProfile(this.getOwnerUuid(), null);
+                profile = MinecraftClient.getInstance().getSessionService().fillProfileProperties(profile, false);
+                owner = profile.getName();
+            }
 
             Horse horse = new Horse(maxHealth,jumpStrength,speed,slots,owner,true);
 
